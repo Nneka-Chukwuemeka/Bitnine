@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mobile-nav {
+	width: 100%;
+	padding: 0.5rem 2rem;
+	font-weigth: bolder;
+}
+
+h3 {
+	@apply font-bold text-xl pb-2 md:text-2xl md:pb-4;
+}
+h4 {
+	@apply font-bold text-xl pb-2;
+}
+p {
+	@apply font-normal text-lg pb-2 md:text-xl md:pb-4;
+}
+
+.btn-container::-webkit-scrollbar,
+.card-container::-webkit-scrollbar {
+	display: none;
+}
+.card {
+	perspective: 1000px;
+	box-shadow: 0 0 5px 2px gray;
+}
+.card:hover {
+	box-shadow: 0 0 2px 1px lightblue;
+}
+.card-inner {
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+}
+.front,
+.back {
+	height: 100%;
+	width: 99%;
+	overflow: hidden;
+}
+
+.front {
+	backface-visibility: hidden;
+}
+.back {
+	transform: rotateY(180deg);
+	top: 0;
+	position: absolute;
+	backface-visibility: hidden;
+}
+.card:hover .card-inner {
+	transform: rotateY(180deg);
+}
+.front-card,
+.back-card {
+	transition: transform 0.6s ease;
+}
+.front-card:hover {
+	z-index: 0;
+}
+.back-card:hover {
+	z-index: 1;
+}
+
+/*Sign Up */
+.sign-image {
+	background: url('./key-features.png');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-color: #dbeafe;
+	background-size: auto;
+}
